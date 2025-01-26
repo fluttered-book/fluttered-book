@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    {{ partial "docs/html-head" . }} {{ partial "docs/inject/head" . }}
+
+    <style>
+      .not-found {
+        text-align: center;
+      }
+      .not-found h1 {
+        margin: 0.25em 0 0 0;
+        opacity: 0.25;
+        font-size: 40vmin;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="flex justify-center not-found">
+      <div>
+        <h2>All pages have moved</h2>
+        <h1>404</h1>
+        <p>
+          I have moved all pages to get a cleaner URL.
+          <br />
+          You can likely find the page you are looking for by following the link
+          below.
+        </p>
+        <h3>
+          <a id="redirect-link">Find page here</a>
+        </h3>
+        <p>Please update any bookmarks!</p>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        const oldPrefix = "/fluttered-book";
+        document.getElementById("redirect-link").href =
+          location.pathname.startsWith(oldPrefix)
+            ? location.pathname.substring(oldPrefix.length)
+            : "/404";
+      })();
+    </script>
+
+    {{ partial "docs/inject/body" . }}
+  </body>
+</html>

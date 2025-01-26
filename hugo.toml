@@ -1,0 +1,23 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Fluttered'
+description = 'Mobile development using Flutter'
+theme = 'hugo-book'
+
+enableGitInfo = true
+
+[params]
+BookTheme = 'auto'
+BookRepo = 'https://github.com/fluttered-book/fluttered-book'
+BookCommitPath = 'commit'
+BookLogo = 'logo.webp'
+
+[markup]
+defaultMarkdownHandler = 'goldmark'
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+style = "tokyonight-moon"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
